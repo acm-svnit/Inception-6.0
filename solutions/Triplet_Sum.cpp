@@ -77,7 +77,7 @@ void solve(){
     for(int i = 0; i < n; i++){
         pair<ll, int> left = pre.rangesum(0, mp[a[i]] - 1);
         pair<ll, int> right = suff.rangesum(mp[a[i]] + 1, N);
-        ans += ((right.second * left.first) % mod + (left.second * right.first) % mod) % mod;
+        ans += ((right.second * left.first) % mod * 1ll + (left.second * right.first) % mod) % mod;
         ans += (((left.second * right.second) % mod) * a[i]) % mod;
         ans %= mod;
         // cout << ans << " ";
